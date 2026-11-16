@@ -1,0 +1,110 @@
+{
+  "celltype": {
+    "Annotation": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Case `celltype`: the `mapquery` tool annotated `celltype`; the second panel is coloured by the score column `mapquery.score`."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/celltype.annot.umap.png",
+            "download": [
+              "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/celltype.annot.umap.pdf"
+            ]
+          }
+        ]
+      }
+    },
+    "Purity": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Overall purity: 0.700 (27249 cells, identity column `seurat_clusters`)."
+          },
+          {
+            "kind": "table",
+            "src": "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/samples.BM.seurat.annotated.celltype.purity.tsv",
+            "data": {
+              "nrows": 100
+            }
+          }
+        ]
+      }
+    }
+  },
+  "celltype_l2": {
+    "Annotation": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Case `celltype_l2`: the `mapquery` tool annotated `predicted.celltype_l2`."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/celltype_l2.annot.umap.png",
+            "download": [
+              "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/celltype_l2.annot.umap.pdf"
+            ]
+          }
+        ]
+      }
+    },
+    "Purity": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Overall purity: 0.756 (27249 cells, identity column `seurat_clusters`)."
+          },
+          {
+            "kind": "table",
+            "src": "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/samples.BM.seurat.annotated.celltype_l2.purity.tsv",
+            "data": {
+              "nrows": 100
+            }
+          }
+        ]
+      }
+    }
+  },
+  "celltype_l3": {
+    "Annotation": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Case `celltype_l3`: the `mapquery` tool annotated `predicted.celltype_l3`."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/celltype_l3.annot.umap.png",
+            "download": [
+              "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/celltype_l3.annot.umap.pdf"
+            ]
+          }
+        ]
+      }
+    },
+    "Purity": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Overall purity: 0.780 (27249 cells, identity column `seurat_clusters`)."
+          },
+          {
+            "kind": "table",
+            "src": "/mnt/disks/.cwd/ImmunopipeBM-output/CellTypeAnnotation/samples.BM.seurat.annotated.celltype_l3.purity.tsv",
+            "data": {
+              "nrows": 100
+            }
+          }
+        ]
+      }
+    }
+  }
+}

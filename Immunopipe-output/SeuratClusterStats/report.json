@@ -1,0 +1,1744 @@
+{
+  "Dimensional reduction plot": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Dimensionality reduction plot for seurat_clusters"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot.dim.png",
+            "download": [
+              "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot.dim.pdf"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Dimensional reduction plot by Timepoint": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Dimensionality reduction plot for seurat_clusters"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-by-Timepoint.dim.png",
+            "download": [
+              "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-by-Timepoint.dim.pdf"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Dimensional reduction plot by Tissue": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Dimensionality reduction plot for seurat_clusters"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-by-Tissue.dim.png",
+            "download": [
+              "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-by-Tissue.dim.pdf"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Dimensional reduction plot by Sample": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Dimensionality reduction plot for seurat_clusters"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-by-Sample.dim.png",
+            "download": [
+              "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-by-Sample.dim.pdf"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Dimensional reduction plot (CAFs)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Dimensionality reduction plot for seurat_clusters"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-CAFs.dim.png",
+            "download": [
+              "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-CAFs.dim.pdf"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Dimensional reduction plot (CAFs, by Timepoint separately)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Dimensionality reduction plot for seurat_clusters"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-CAFs-by-Timepoint-separately.dim.png",
+            "download": [
+              "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-CAFs-by-Timepoint-separately.dim.pdf"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Dimensional reduction plot (CAFs, by Tissue separately)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Dimensionality reduction plot for seurat_clusters"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-CAFs-by-Tissue-separately.dim.png",
+            "download": [
+              "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/dimplots/Dimensional-reduction-plot-CAFs-by-Tissue-separately.dim.pdf"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Number of cells in each cluster (Bar Chart)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The bar plot shows the distribution of cells across categories defined by 'seurat_clusters'. The values represent the number of cells. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-Bar-Chart.png"
+          }
+        ]
+      }
+    }
+  },
+  "Number of cells in each cluster by Sample (Bar Chart)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The bar plot shows the distribution of cells across categories defined by 'seurat_clusters', grouped by Sample. The values represent the number of cells. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-by-Sample-Bar-Chart.png"
+          }
+        ]
+      }
+    }
+  },
+  "Number of cells in each cluster (bar)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": []
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-bar.png"
+          }
+        ]
+      }
+    }
+  },
+  "Number of cells in each cluster (pie)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The pie plot shows the distribution of cells across categories defined by 'seurat_clusters'. The values represent the number of cells. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-pie.png"
+          }
+        ]
+      }
+    }
+  },
+  "Number of cells in each cluster by Sample": {
+    "#": {
+      "#": {
+        "tabs": [
+          {
+            "name": "Plot",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": []
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-by-Sample.png"
+              }
+            ]
+          },
+          {
+            "name": "Data",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Data used directly for the plot"
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-by-Sample.data.txt",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Number of cells in each cluster by Timepoint": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": []
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "Fraction of cells in each cluster by Timepoint": {
+    "#": {
+      "#": {
+        "tabs": [
+          {
+            "name": "Plot",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": []
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Timepoint.png"
+              }
+            ]
+          },
+          {
+            "name": "Data",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Data used directly for the plot"
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Timepoint.data.txt",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Number of cells in each cluster by Tissue": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": []
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Number-of-cells-in-each-cluster-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "Fraction of cells in each cluster by Tissue": {
+    "#": {
+      "#": {
+        "tabs": [
+          {
+            "name": "Plot",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": []
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Tissue.png"
+              }
+            ]
+          },
+          {
+            "name": "Data",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Data used directly for the plot"
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Tissue.data.txt",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Fraction of cells in each cluster by Timepoint (stacked)": {
+    "#": {
+      "#": {
+        "tabs": [
+          {
+            "name": "Plot",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": []
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Timepoint-stacked.png"
+              }
+            ]
+          },
+          {
+            "name": "Data",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Data used directly for the plot"
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Timepoint-stacked.data.txt",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Fraction of cells in each cluster by Tissue (stacked)": {
+    "#": {
+      "#": {
+        "tabs": [
+          {
+            "name": "Plot",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": []
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Tissue-stacked.png"
+              }
+            ]
+          },
+          {
+            "name": "Data",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Data used directly for the plot"
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Tissue-stacked.data.txt",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Fraction of cells in each cluster by Timepoint (violin)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": ["The violin plot shows the distribution of cells across categories defined by 'seurat_clusters', grouped by Sample. The values represent the fraction of cells calculated by \"group\". Statistical comparisons were performed between groups using \"wilcox.test\" method.", "The violin plot shows the distribution of cells across categories defined by 'seurat_clusters', grouped by Timepoint. The values represent the fraction of cells calculated by \"group\". Statistical comparisons were performed between groups using \"wilcox.test\" method."]
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Timepoint-violin.png"
+          }
+        ]
+      }
+    }
+  },
+  "Fraction of cells in each cluster by Tissue (violin)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": ["The violin plot shows the distribution of cells across categories defined by 'seurat_clusters', grouped by Sample. The values represent the fraction of cells calculated by \"group\". Statistical comparisons were performed between groups using \"wilcox.test\" method.", "The violin plot shows the distribution of cells across categories defined by 'seurat_clusters', grouped by Tissue. The values represent the fraction of cells calculated by \"group\". Statistical comparisons were performed between groups using \"wilcox.test\" method."]
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/stats/Fraction-of-cells-in-each-cluster-by-Tissue-violin.png"
+          }
+        ]
+      }
+    }
+  },
+  "Number of genes expressed in each cluster": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "Number of genes expressed in each cluster"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/ngenes/Number-of-genes-expressed-in-each-cluster.png"
+          }
+        ]
+      }
+    }
+  },
+  "Myeloid Cell Markers": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FCGR3A, CD14, SIRPA, CD68, SLAMF7) across cells. The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Myeloid-Cell-Markers.png"
+          }
+        ]
+      }
+    }
+  },
+  "Myeloid Cell Markers (by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FCGR3A, CD14, SIRPA, CD68, SLAMF7) across cells, and split by \"Timepoint\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Myeloid-Cell-Markers-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "Myeloid Cell Markers (by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FCGR3A, CD14, SIRPA, CD68, SLAMF7) across cells, and split by \"Tissue\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Myeloid-Cell-Markers-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "CAF Markers": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP, SLAMF7) across cells. The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CAF-Markers.png"
+          }
+        ]
+      }
+    }
+  },
+  "CAF Markers (by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP, SLAMF7) across cells, and split by \"Timepoint\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CAF-Markers-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "CAF Markers (by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP, SLAMF7) across cells, and split by \"Tissue\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CAF-Markers-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "Plasma Cell Markers": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (TNFRSF17, SLAMF7, CD47, SDC1) across cells. The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Plasma-Cell-Markers.png"
+          }
+        ]
+      }
+    }
+  },
+  "Plasma Cell Markers (by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (TNFRSF17, SLAMF7, CD47, SDC1) across cells, and split by \"Timepoint\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Plasma-Cell-Markers-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "Plasma Cell Markers (by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (TNFRSF17, SLAMF7, CD47, SDC1) across cells, and split by \"Tissue\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Plasma-Cell-Markers-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "ModuleScore by Timepoint": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (ModuleScore) across cells, and split by \"Timepoint\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/ModuleScore-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "ModuleScore by Tissue": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (ModuleScore) across cells, and split by \"Tissue\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/ModuleScore-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "ModuleScore by Timepoint (violin)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (ModuleScore) across cells, grouped by \"Timepoint\". The plot type is 'violin', showing the distribution of feature values by the grouping variables. Statistical comparisons were performed between groups using \"wilcox.test\" method."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/ModuleScore-by-Timepoint-violin.png"
+          }
+        ]
+      }
+    }
+  },
+  "ModuleScore by Tissue (violin)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (ModuleScore) across cells, grouped by \"Tissue\". The plot type is 'violin', showing the distribution of feature values by the grouping variables. Statistical comparisons were performed between groups using \"wilcox.test\" method."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/ModuleScore-by-Tissue-violin.png"
+          }
+        ]
+      }
+    }
+  },
+  "ModuleScore by Sample": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (ModuleScore) across cells, and split by \"Sample\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/ModuleScore-by-Sample.png"
+          }
+        ]
+      }
+    }
+  },
+  "Exhaustion/Activation Markers (by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (IL2RA, CD69, TIGIT, CTLA4, PDCD1, LAG3, HAVCR2, IFNG, IL4R, IL4, IL2, IL15, IL12A) across cells, grouped by \"Timepoint\". The plot type is 'violin', showing the distribution of feature values by the grouping variables. Statistical comparisons were performed between groups using \"wilcox.test\" method."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Exhaustion-Activation-Markers-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "Exhaustion/Activation Markers (by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (IL2RA, CD69, TIGIT, CTLA4, PDCD1, LAG3, HAVCR2, IFNG, IL4R, IL4, IL2, IL15, IL12A) across cells, grouped by \"Tissue\". The plot type is 'violin', showing the distribution of feature values by the grouping variables. Statistical comparisons were performed between groups using \"wilcox.test\" method."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Exhaustion-Activation-Markers-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "FAP and S100A4 expression (dimplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP, S100A4) across cells, and split by \"seurat_clusters\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FAP-and-S100A4-expression-dimplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "FAP and S100A4 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP, S100A4) across cells, grouped by \"Timepoint\", and split by \"seurat_clusters\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FAP-and-S100A4-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "FAP and S100A4 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP, S100A4) across cells, grouped by \"Tissue\", and split by \"seurat_clusters\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FAP-and-S100A4-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "SIRPA and FCGR3A (CD16A) expression (dimplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SIRPA, FCGR3A) across cells, and split by \"seurat_clusters\". The plot type is 'dim', displaying the features on a dimensional reduction embedding. The reduction used is \"umap\", using dimensions 1,2"
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SIRPA-and-FCGR3A-CD16A-expression-dimplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "SIRPA and FCGR3A (CD16A) expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SIRPA, FCGR3A) across cells, grouped by \"Timepoint\", and split by \"seurat_clusters\". The plot type is 'box', showing the distribution of feature values by the grouping variables. Statistical comparisons were performed between groups using \"wilcox.test\" method."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SIRPA-and-FCGR3A-CD16A-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "SIRPA and FCGR3A (CD16A) expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SIRPA, FCGR3A) across cells, grouped by \"Tissue\", and split by \"seurat_clusters\". The plot type is 'box', showing the distribution of feature values by the grouping variables. Statistical comparisons were performed between groups using \"wilcox.test\" method."
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SIRPA-and-FCGR3A-CD16A-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (CD47, SIRPA, FCGR3A, FAP) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CD47-SIRPA-FCGR3A-CD16A-and-FAP-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "CD47 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (CD47) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CD47-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "SIRPA expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SIRPA) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SIRPA-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "FCGR3A expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FCGR3A) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FCGR3A-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "FAP expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FAP-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SLAMF7, B2M, LILRB1, LILRB2, HLA-A, HLA-B, HLA-C, HLA-DPA1, HLA-DPB1, HLA-DQA1, HLA-DQB1, HLA-DRA, HLA-DRB1) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SLAMF7-MHCI-MHCII-B2M-LILRB1-and-LILRB2-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "SLAMF7 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SLAMF7) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SLAMF7-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "B2M expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (B2M) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/B2M-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "LILRB1 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (LILRB1) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/LILRB1-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "LILRB2 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (LILRB2) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/LILRB2-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-A expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-A) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-A-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-B expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-B) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-B-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-C expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-C) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-C-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DPA1 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DPA1) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DPA1-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DPB1 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DPB1) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DPB1-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DQA1 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DQA1) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DQA1-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DQB1 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DQB1) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DQB1-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DRA expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DRA) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DRA-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DRB1 expression (boxplots)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DRB1) across cells, and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DRB1-expression-boxplots.png"
+          }
+        ]
+      }
+    }
+  },
+  "CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (CD47, SIRPA, FCGR3A, FAP) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CD47-SIRPA-FCGR3A-CD16A-and-FAP-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (CD47, SIRPA, FCGR3A, FAP) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CD47-SIRPA-FCGR3A-CD16A-and-FAP-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "CD47 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (CD47) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CD47-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "CD47 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (CD47) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/CD47-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "SIRPA expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SIRPA) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SIRPA-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "SIRPA expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SIRPA) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SIRPA-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "FCGR3A expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FCGR3A) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FCGR3A-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "FCGR3A expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FCGR3A) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FCGR3A-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "FAP expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FAP-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "FAP expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (FAP) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/FAP-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SLAMF7, B2M, LILRB1, LILRB2, HLA-A, HLA-B, HLA-C, HLA-DPA1, HLA-DPB1, HLA-DQA1, HLA-DQB1, HLA-DRA, HLA-DRB1) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SLAMF7-MHCI-MHCII-B2M-LILRB1-and-LILRB2-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SLAMF7, B2M, LILRB1, LILRB2, HLA-A, HLA-B, HLA-C, HLA-DPA1, HLA-DPB1, HLA-DQA1, HLA-DQB1, HLA-DRA, HLA-DRB1) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SLAMF7-MHCI-MHCII-B2M-LILRB1-and-LILRB2-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "SLAMF7 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SLAMF7) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SLAMF7-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "SLAMF7 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (SLAMF7) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/SLAMF7-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "B2M expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (B2M) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/B2M-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "B2M expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (B2M) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/B2M-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "LILRB1 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (LILRB1) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/LILRB1-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "LILRB1 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (LILRB1) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/LILRB1-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "LILRB2 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (LILRB2) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/LILRB2-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "LILRB2 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (LILRB2) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/LILRB2-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-A expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-A) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-A-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-A expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-A) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-A-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-B expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-B) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-B-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-B expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-B) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-B-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-C expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-C) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-C-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-C expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-C) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-C-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DPA1 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DPA1) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DPA1-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DPA1 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DPA1) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DPA1-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DPB1 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DPB1) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DPB1-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DPB1 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DPB1) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DPB1-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DQA1 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DQA1) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DQA1-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DQA1 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DQA1) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DQA1-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DQB1 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DQB1) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DQB1-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DQB1 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DQB1) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DQB1-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DRA expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DRA) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DRA-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DRA expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DRA) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DRA-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DRB1 expression (boxplots, by Timepoint)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DRB1) across cells, grouped by \"Timepoint\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DRB1-expression-boxplots-by-Timepoint.png"
+          }
+        ]
+      }
+    }
+  },
+  "HLA-DRB1 expression (boxplots, by Tissue)": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (HLA-DRB1) across cells, grouped by \"Tissue\", and split by \"TRUE\". The plot type is 'box', showing the distribution of feature values by the grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/HLA-DRB1-expression-boxplots-by-Tissue.png"
+          }
+        ]
+      }
+    }
+  },
+  "Hypersialylation Markers": {
+    "#": {
+      "#": {
+        "flat": [
+          {
+            "kind": "descr",
+            "content": "The plot shows the distribution or pattern of the specified features (c(\"GNE\", \"CMAS\", \"NANS\", \"NANP\", \"SLC35A1\"), c(\"NEU1\", \"NEU3\", \"NEU4\"), c(\"ST3GAL1\", \"ST3GAL2\", \"ST3GAL3\", \"ST3GAL4\", \"ST3GAL5\", \"ST3GAL6\", \"ST6GAL1\", \"ST6GAL2\", \"ST6GALNAC1\", \"ST6GALNAC2\", \"ST6GALNAC3\", \"ST6GALNAC4\", \"ST6GALNAC5\", \"ST6GALNAC6\", \"ST8SIA1\", \"ST8SIA4\", \"ST8SIA5\", \"ST8SIA6\"), c(\"UGCG\", \"B3GALT4\", \"B4GALNT1\", \"B4GALT5\", \"B4GALT6\"), c(\"CD44\", \"MUC1\"), c(\"PTGS2\", \"TGFB1\", \"IL6\")) across cells. The plot type is 'heatmap', arranged as a heatmap by rows_name and other grouping variables. "
+          },
+          {
+            "kind": "image",
+            "src": "/mnt/disks/.cwd/Immunopipe-output/SeuratClusterStats/samples.seurat.cluster_stats/features/Hypersialylation-Markers.png"
+          }
+        ]
+      }
+    }
+  }
+}

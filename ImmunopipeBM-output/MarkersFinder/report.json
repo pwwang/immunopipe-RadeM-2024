@@ -1,0 +1,859 @@
+{
+  "predicted.celltype_l3": {
+    "B-Cell": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/B-Cell/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/B-Cell/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/B-Cell/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/B-Cell/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/B-Cell/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/B-Cell/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/B-Cell/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "CD4 T-Cell": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD4-T-Cell/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD4-T-Cell/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD4-T-Cell/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD4-T-Cell/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD4-T-Cell/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD4-T-Cell/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD4-T-Cell/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "CD8 T-Cell": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD8-T-Cell/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD8-T-Cell/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD8-T-Cell/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD8-T-Cell/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD8-T-Cell/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD8-T-Cell/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/CD8-T-Cell/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cDC": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/cDC/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/cDC/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/cDC/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/cDC/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/cDC/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/cDC/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/cDC/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "gdT-Cell": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/gdT-Cell/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Warning",
+            "contents": [
+              {
+                "kind": "error",
+                "content": "Not enough significant markers with 'p_val_adj < 0.05' found (< 5) for enrichment analysis.",
+                "kind_": "warning"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Mono CD14": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD14/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD14/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD14/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD14/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD14/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD14/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD14/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Mono CD16": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD16/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD16/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD16/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD16/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD16/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD16/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Mono-CD16/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "NK": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/NK/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/NK/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/NK/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/NK/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/NK/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/NK/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/NK/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pDC": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/pDC/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/pDC/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/pDC/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/pDC/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/pDC/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/pDC/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/pDC/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Progenitor": {
+      "Markers (Responder vs Non-responder)": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "Showing top 100 (if more than 100) markers ordered by abs(avg_log2FC) descendingly. Use 'Download the entire data' button to download all significant markers by 'p_val_adj &lt; 0.05'."
+              },
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Progenitor/sigmarkers.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (diff_pct)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Progenitor/markers.Volcano-Plot-diff_pct.png"
+              }
+            ]
+          },
+          {
+            "name": "Volcano Plot (log2FC)",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Progenitor/markers.Volcano-Plot-log2FC.png"
+              }
+            ]
+          },
+          {
+            "name": "Dot Plot",
+            "contents": [
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Progenitor/markers.Dot-Plot.png"
+              }
+            ]
+          }
+        ]
+      },
+      "Enrichment Analysis": {
+        "tabs": [
+          {
+            "name": "Table",
+            "contents": [
+              {
+                "kind": "table",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Progenitor/enrich.tsv",
+                "data": {
+                  "nrows": 100
+                }
+              }
+            ]
+          },
+          {
+            "name": "KEGG_2021_Human",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'KEGG_2021_Human', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Progenitor/enrich.KEGG_2021_Human.Bar-Plot.png"
+              }
+            ]
+          },
+          {
+            "name": "MSigDB_Hallmark_2020",
+            "contents": [
+              {
+                "kind": "descr",
+                "content": "The bar plot shows the top enriched terms in database 'MSigDB_Hallmark_2020', the x-axis shows the -log10 of the adjusted p-values, and the y-axis shows the term names. The number next to each bar indicates the overlap gene count."
+              },
+              {
+                "kind": "image",
+                "src": "/mnt/disks/.cwd/ImmunopipeBM-output/MarkersFinder/samples.markers/predicted-celltype_l3/Progenitor/enrich.MSigDB_Hallmark_2020.Bar-Plot.png"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

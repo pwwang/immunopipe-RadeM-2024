@@ -1,0 +1,7 @@
+Sample	OrigSample	Tissue	Remission	Group	RNAData
+P01	MXMERZ002A_01	BM	PD	Non-responder	data/prepared-data/S01
+P07	MXMERZ002A_04	BM	CR	Responder	data/prepared-data/S04
+P08	MXMERZ002A_08	BM	CR	Responder	data/prepared-data/S08
+P10	MXMERZ002A_10	BM	PD	Non-responder	data/prepared-data/S10
+P12	MXMERZ002A_16	BM	CR	Responder	data/prepared-data/S16
+P09	MXMERZ002A_21	BM	CR	Responder	data/prepared-data/S21

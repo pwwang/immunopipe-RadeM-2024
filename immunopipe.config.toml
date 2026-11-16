@@ -1,0 +1,1301 @@
+
+[SampleInfo.in]
+infile = ["data/samples.txt"]
+
+[SampleInfo.envs.stats.Sample_Timepoint]
+plot_type = "bar"
+x = "Timepoint"
+
+[SampleInfo.envs.stats.Sample_Tissue]
+plot_type = "bar"
+x = "Tissue"
+
+[SeuratPreparing.envs]
+# ncores = 4
+cell_qc = "nFeature_RNA > 200 & percent.mt < 10 & percent.ribo > 5"
+gene_qc = { min_cells = 0, excludes = ["^TR(A|B|D|G)V$", "^IG.V$"] }
+# reuse the output from the unsupervised pipeline
+cache = "./cache"
+doublet_detector = "scDblFinder"
+use_sct = true
+contam_correction = "decontX"
+
+[SeuratPreparing.envs.IntegrateLayers]
+method = "rpca"
+
+[SeuratClustering.envs.FindClusters]
+resolution = ["0.2:1.0", "0.3"]
+
+[ModuleScoreCalculator.envs.modules.ModuleScore]
+features = ["FCGR3A", "CD14", "SIRPA", "CD68", "SLAMF7", "FAP", "TNFRSF17", "CD47", "SDC1"]
+
+# [CellTypeAnnotation.envs]
+# # tool = "sctype"
+# # sctype_db = "~/reference/ScTypeDB_BoneMarrow.xlsx"
+# # sctype_tissue = "Bone Marrow"
+# tool = "direct"
+# cell_types = [
+#     # 1. "pct1<pct2_1", # "Unknown.2", # "pct1<pct2_1", # "Cluster1", # "Malignant Plasma cells-1",
+#     "pct1<pct2_1",
+#     # 2. "pct1<pct2_2", # "Unknown.3", # "pct1<pct2_2", # "Cluster2", # "CAF-1",
+#     "pct1<pct2_2",
+#     # 3. "Mesenchymal cell", # "CAF_1", # "Cluster3", # "Malignant Plasma cells-2",
+#     "myCAF",
+#     # 4. "Mesenchymal cell.1", # "CAF_2", # "Cluster4", # "CAF-2",
+#     "iCAF_1",
+#     # 5. "Stromal cell.1", # "CAF_3", # "Cluster5", # "TAM-1",
+#     "iCAF_2",
+#     # 6. "B cell", # "CAF_4", # "Cluster6", # "CAF-3",
+#     "Angiogenic/hypoxia-adapted CAF",
+#     # 7. "Unidentified", # "Progenitor cell", # "Unidentified", # "Cluster7", # "CAF-4",
+#     "iCAF_1",
+#     # 8. "Myeloid cell", # "M2-like macrophage", # "Cluster8", # "TAM-2",
+#     "M2-like macrophage",
+#     # 9. "Malignant plasma cells-1", # "Unknown.1", # "Malignant_1", # "Cluster9", # "CAF-5",
+#     "Malignant plasma cells-1",
+#     # 10. "Stromal cell", # "Malignant_2", # "Cluster10", # "CAF-6",
+#     "Malignant plasma cells-2",
+#     # 11. "Myeloid cell.1", # "Classical monocyte", # "Cluster11", # "CAF-7",
+#     "Classical monocyte",
+#     # 12. "Monocyte macrophage", # "Dendritic cell", # "Monocyte/macrophage", # "Cluster12", # "TAM-3",
+#     "Monocyte macrophage",
+#     # 13. "Malignant plasma cells-3", # "Unknown", # "Malignant_3", # "Cluster13", # "TAM-4",
+#     "Malignant plasma cells-3",
+#     # 14. "T cell", # "CD8 T cell" # "Cluster14", # "T cell",
+#     "CD8 T cell",
+# ]
+# merge = true
+
+[SeuratClusterStats.plugin_opts]
+report_paging = 8
+
+[SeuratClusterStats.envs]
+cache = "./cache"
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster (bar)']
+x_text_angle = 90
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster (pie)']
+plot_type = "pie"
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster by Sample']
+x_text_angle = 90
+group_by = "Sample"
+save_data = true
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster by Timepoint']
+group_by = "Timepoint"
+x_text_angle = 90
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Timepoint']
+group_by = "Timepoint"
+save_data = true
+x_text_angle = 90
+frac = "group"
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster by Tissue']
+group_by = "Tissue"
+x_text_angle = 90
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Tissue']
+group_by = "Tissue"
+save_data = true
+x_text_angle = 90
+frac = "group"
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Timepoint (stacked)']
+group_by = "Timepoint"
+save_data = true
+x_text_angle = 90
+position = "stack"
+frac = "group"
+swap = true
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Tissue (stacked)']
+group_by = "Tissue"
+save_data = true
+x_text_angle = 90
+position = "stack"
+frac = "group"
+swap = true
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Timepoint (violin)']
+group_by = ["Sample", "Timepoint"]
+x_text_angle = 90
+frac = "group"
+plot_type = "violin"
+comparisons = true
+sig_label = "p.format"
+add_point = true
+aspect_ratio = 0.25
+devpars = {width = 1500, height = 600}
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Tissue (violin)']
+group_by = ["Sample", "Tissue"]
+x_text_angle = 90
+frac = "group"
+plot_type = "violin"
+comparisons = true
+sig_label = "p.format"
+add_point = true
+aspect_ratio = 0.25
+devpars = {width = 1500, height = 600}
+
+# [SeuratClusterStats.envs.stats.'Number of cells in CAFs']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+# plot_type = "bar"
+# # facet_by = "Group"
+# x_text_angle = 90
+# devpars = {width = 1200, height = 1500, res = 192}
+
+# [SeuratClusterStats.envs.stats.'Number of cells in CAFs by Group']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+# plot_type = "bar"
+# facet_by = "Group"
+# x_text_angle = 90
+# devpars = {width = 1600, height = 1500, res = 192}
+
+[SeuratClusterStats.envs.ngenes]
+'Number of genes expressed in each cluster' = {devpars = {width = 1200}}
+
+[SeuratClusterStats.envs.features."Myeloid Cell Markers"]
+features = [
+    "FCGR3A",  # CD16a
+    "CD14", "SIRPA", "CD68", "SLAMF7"]
+plot_type = "dim"
+
+[SeuratClusterStats.envs.features."Myeloid Cell Markers (by Timepoint)"]
+features = [
+    "FCGR3A",  # CD16a
+    "CD14", "SIRPA", "CD68", "SLAMF7"]
+plot_type = "dim"
+split_by = "Timepoint"
+
+[SeuratClusterStats.envs.features."Myeloid Cell Markers (by Tissue)"]
+features = [
+    "FCGR3A",  # CD16a
+    "CD14", "SIRPA", "CD68", "SLAMF7"]
+plot_type = "dim"
+split_by = "Tissue"
+
+[SeuratClusterStats.envs.features."CAF Markers"]
+features = ["FAP", "SLAMF7"]
+plot_type = "dim"
+
+[SeuratClusterStats.envs.features."CAF Markers (by Timepoint)"]
+features = ["FAP", "SLAMF7"]
+plot_type = "dim"
+split_by = "Timepoint"
+
+[SeuratClusterStats.envs.features."CAF Markers (by Tissue)"]
+features = ["FAP", "SLAMF7"]
+plot_type = "dim"
+split_by = "Tissue"
+
+[SeuratClusterStats.envs.features."Plasma Cell Markers"]
+features = [
+    "TNFRSF17",  # BCMA
+    "SLAMF7",
+    "CD47",
+    "SDC1"  # CD138
+]
+plot_type = "dim"
+
+[SeuratClusterStats.envs.features."Plasma Cell Markers (by Timepoint)"]
+features = [
+    "TNFRSF17",  # BCMA
+    "SLAMF7",
+    "CD47",
+    "SDC1"  # CD138
+]
+plot_type = "dim"
+split_by = "Timepoint"
+
+[SeuratClusterStats.envs.features."Plasma Cell Markers (by Tissue)"]
+features = [
+    "TNFRSF17",  # BCMA
+    "SLAMF7",
+    "CD47",
+    "SDC1"  # CD138
+]
+plot_type = "dim"
+split_by = "Tissue"
+
+[SeuratClusterStats.envs.features."ModuleScore by Timepoint"]
+features = ["ModuleScore"]
+plot_type = "dim"
+split_by = "Timepoint"
+
+[SeuratClusterStats.envs.features."ModuleScore by Tissue"]
+features = ["ModuleScore"]
+plot_type = "dim"
+split_by = "Tissue"
+
+[SeuratClusterStats.envs.features."ModuleScore by Timepoint (violin)"]
+features = ["ModuleScore"]
+plot_type = "violin"
+group_by = "Timepoint"
+add_box = true
+comparisons = true
+y_max = 1.8
+x_text_angle = 90
+devpars = {width = 1200, height = 960}
+
+[SeuratClusterStats.envs.features."ModuleScore by Tissue (violin)"]
+features = ["ModuleScore"]
+plot_type = "violin"
+group_by = "Tissue"
+add_box = true
+comparisons = true
+y_max = 1.8
+x_text_angle = 90
+devpars = {width = 1200, height = 960}
+
+[SeuratClusterStats.envs.features."ModuleScore by Sample"]
+features = ["ModuleScore"]
+plot_type = "dim"
+split_by = "Sample"
+ncol = 2
+
+[SeuratClusterStats.envs.features."Exhaustion/Activation Markers (by Timepoint)"]
+features = ["IL2RA", "CD69", "TIGIT", "CTLA4", "PDCD1", "LAG3", "HAVCR2", "IFNG", "IL4R", "IL4", "IL2", "IL15", "IL12A"]
+plot_type = "violin"
+add_box = true
+group_by = "Timepoint"
+comparisons = true
+y_nbreaks = 4
+y_max = 4.4
+x_text_angle = 90
+devpars = {res = 150}
+
+[SeuratClusterStats.envs.features."Exhaustion/Activation Markers (by Tissue)"]
+features = ["IL2RA", "CD69", "TIGIT", "CTLA4", "PDCD1", "LAG3", "HAVCR2", "IFNG", "IL4R", "IL4", "IL2", "IL15", "IL12A"]
+plot_type = "violin"
+add_box = true
+group_by = "Tissue"
+comparisons = true
+y_nbreaks = 4
+y_max = 4.4
+x_text_angle = 90
+devpars = {res = 150}
+
+[SeuratClusterStats.envs.features."FAP and S100A4 expression (dimplots)"]
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+plot_type = "dim"
+features = ["FAP", "S100A4"]
+split_by = "seurat_clusters"
+
+[SeuratClusterStats.envs.features."FAP and S100A4 expression (boxplots, by Timepoint)"]
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+plot_type = "box"
+group_by = "Timepoint"
+features = ["FAP", "S100A4"]
+split_by = "seurat_clusters"
+
+[SeuratClusterStats.envs.features."FAP and S100A4 expression (boxplots, by Tissue)"]
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+plot_type = "box"
+group_by = "Tissue"
+features = ["FAP", "S100A4"]
+split_by = "seurat_clusters"
+
+[SeuratClusterStats.envs.features."SIRPA and FCGR3A (CD16A) expression (dimplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "dim"
+features = ["SIRPA", "FCGR3A"]
+split_by = "seurat_clusters"
+
+[SeuratClusterStats.envs.features."SIRPA and FCGR3A (CD16A) expression (boxplots, by Timepoint)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Timepoint"
+features = ["SIRPA", "FCGR3A"]
+split_by = "seurat_clusters"
+x_text_angle = 90
+comparisons = true
+y_max = 4.5
+sig_label = "p = {p}"
+y_nbreaks = 6
+sig_labelsize = 5
+devpars = {height = 4000, width = 8400, res = 300}
+theme_args = {base_size = 30}
+
+[SeuratClusterStats.envs.features."SIRPA and FCGR3A (CD16A) expression (boxplots, by Tissue)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Tissue"
+features = ["SIRPA", "FCGR3A"]
+split_by = "seurat_clusters"
+x_text_angle = 90
+comparisons = true
+y_max = 4.5
+sig_label = "p = {p}"
+y_nbreaks = 6
+sig_labelsize = 5
+devpars = {height = 4000, width = 8400, res = 300}
+theme_args = {base_size = 30}
+
+[SeuratClusterStats.envs.features."CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["CD47", "SIRPA", "FCGR3A", "FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 3600, width = 5500, res = 100}
+# comparisons = true
+hide_ns = true
+step_increase = 1
+# [SeuratClusterStats.envs.features."CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots)".comparisons]
+# 0 = ["myCAF", "iCAF_1"]
+# 1 = ["myCAF", "iCAF_2"]
+# 2 = ["myCAF", "Angiogenic/hypoxia-adapted CAF"]
+# 3 = ["myCAF", "M2-like macrophage"]
+# 4 = ["myCAF", "Malignant plasma cells-2"]
+# 5 = ["myCAF", "Classical monocyte"]
+# 6 = ["myCAF", "CD8 T cell"]
+# 7 = ["iCAF_1", "iCAF_2"]
+# 8 = ["iCAF_1", "Angiogenic/hypoxia-adapted CAF"]
+# 9 = ["iCAF_1", "M2-like macrophage"]
+# 10 = ["iCAF_1", "Malignant plasma cells-2"]
+# 11 = ["iCAF_1", "Classical monocyte"]
+# 12 = ["iCAF_1", "CD8 T cell"]
+# 13 = ["iCAF_2", "Angiogenic/hypoxia-adapted CAF"]
+# 14 = ["iCAF_2", "M2-like macrophage"]
+# 15 = ["iCAF_2", "Malignant plasma cells-2"]
+# 16 = ["iCAF_2", "Classical monocyte"]
+# 17 = ["iCAF_2", "CD8 T cell"]
+# 18 = ["Angiogenic/hypoxia-adapted CAF", "M2-like macrophage"]
+# 19 = ["Angiogenic/hypoxia-adapted CAF", "Malignant plasma cells-2"]
+# 20 = ["Angiogenic/hypoxia-adapted CAF", "Classical monocyte"]
+# 21 = ["Angiogenic/hypoxia-adapted CAF", "CD8 T cell"]
+# 22 = ["M2-like macrophage", "Malignant plasma cells-2"]
+# 23 = ["M2-like macrophage", "Classical monocyte"]
+# 24 = ["M2-like macrophage", "CD8 T cell"]
+# 25 = ["Malignant plasma cells-2", "Classical monocyte"]
+# 26 = ["Malignant plasma cells-2", "CD8 T cell"]
+# 27 = ["Classical monocyte", "CD8 T cell"]
+
+[SeuratClusterStats.envs.features."CD47 expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["CD47"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."SIRPA expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["SIRPA"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."FCGR3A expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["FCGR3A"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."FAP expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "SLAMF7", "B2M", "LILRB1", "LILRB2",
+    "HLA-A", "HLA-B", "HLA-C",
+    "HLA-DPA1", "HLA-DPB1", "HLA-DQA1", "HLA-DQB1", "HLA-DRA", "HLA-DRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 7200, width = 11000, res = 100}
+
+[SeuratClusterStats.envs.features."SLAMF7 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "SLAMF7",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."B2M expression (boxplots)"]
+plot_type = "box"
+features = [
+    "B2M",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "LILRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB2 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "LILRB2",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-A expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-A",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-B expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-B",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-C expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-C",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPA1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DPA1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DPB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQA1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DQA1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DQB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRA expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DRA",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots, by Timepoint)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Timepoint"
+features = ["CD47", "SIRPA", "FCGR3A", "FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 24}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 3000, width = 5500, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots, by Tissue)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Tissue"
+features = ["CD47", "SIRPA", "FCGR3A", "FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 24}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 3000, width = 5500, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."CD47 expression (boxplots, by Timepoint)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Timepoint"
+features = ["CD47"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."CD47 expression (boxplots, by Tissue)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Tissue"
+features = ["CD47"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."SIRPA expression (boxplots, by Timepoint)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Timepoint"
+features = ["SIRPA"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."SIRPA expression (boxplots, by Tissue)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Tissue"
+features = ["SIRPA"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."FCGR3A expression (boxplots, by Timepoint)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Timepoint"
+features = ["FCGR3A"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."FCGR3A expression (boxplots, by Tissue)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Tissue"
+features = ["FCGR3A"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."FAP expression (boxplots, by Timepoint)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Timepoint"
+features = ["FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."FAP expression (boxplots, by Tissue)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Tissue"
+features = ["FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = [
+    "SLAMF7", "B2M", "LILRB1", "LILRB2",
+    "HLA-A", "HLA-B", "HLA-C",
+    "HLA-DPA1", "HLA-DPB1", "HLA-DQA1", "HLA-DQB1", "HLA-DRA", "HLA-DRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 6000, width = 10200, res = 100}
+ncol = 4
+
+[SeuratClusterStats.envs.features."SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = [
+    "SLAMF7", "B2M", "LILRB1", "LILRB2",
+    "HLA-A", "HLA-B", "HLA-C",
+    "HLA-DPA1", "HLA-DPB1", "HLA-DQA1", "HLA-DQB1", "HLA-DRA", "HLA-DRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 6000, width = 10200, res = 100}
+ncol = 4
+
+[SeuratClusterStats.envs.features."SLAMF7 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["SLAMF7"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."SLAMF7 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["SLAMF7"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."B2M expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["B2M"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."B2M expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["B2M"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB1 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["LILRB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB1 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["LILRB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB2 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["LILRB2"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB2 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["LILRB2"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-A expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-A"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-A expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-A"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-B expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-B"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-B expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-B"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-C expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-C"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-C expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-C"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPA1 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-DPA1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPA1 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-DPA1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPB1 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-DPB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPB1 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-DPB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQA1 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-DQA1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQA1 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-DQA1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQB1 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-DQB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQB1 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-DQB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRA expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-DRA"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRA expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-DRA"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRB1 expression (boxplots, by Timepoint)"]
+plot_type = "box"
+group_by = "Timepoint"
+features = ["HLA-DRB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRB1 expression (boxplots, by Tissue)"]
+plot_type = "box"
+group_by = "Tissue"
+features = ["HLA-DRB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+
+[SeuratClusterStats.envs.features."Hypersialylation Markers".features]
+"Sialic acid biosynthesis" = [
+    "GNE",
+    "CMAS",
+    "NANS",
+    "NANP",
+    "SLC35A1",
+]
+Neuraminidases = [
+    "NEU1",
+    # "NEU2",
+    "NEU3",
+    "NEU4",
+]
+Sialyltransferases = [
+    "ST3GAL1",
+    "ST3GAL2",
+    "ST3GAL3",
+    "ST3GAL4",
+    "ST3GAL5",
+    "ST3GAL6",
+    "ST6GAL1",
+    "ST6GAL2",
+    "ST6GALNAC1",
+    "ST6GALNAC2",
+    "ST6GALNAC3",
+    "ST6GALNAC4",
+    "ST6GALNAC5",
+    "ST6GALNAC6",
+    "ST8SIA1",
+    # "ST8SIA2",
+    # "ST8SIA3",
+    "ST8SIA4",
+    "ST8SIA5",
+    "ST8SIA6",
+]
+"Ganglioside synthesis" = [
+    "UGCG",
+    "B3GALT4",
+    "B4GALNT1",
+    "B4GALT5",
+    "B4GALT6",
+]
+"Possible Siglec ligands" = [
+    "CD44",
+    "MUC1",
+]
+"Drivers of sialyltransferase" = [
+    "PTGS2",
+    "TGFB1",
+    "IL6",
+]
+[SeuratClusterStats.envs.features."Hypersialylation Markers"]
+plot_type = "heatmap"
+devpars = {height = 1500}
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot']
+devpars = {width = 1400}
+label = true
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot by Timepoint']
+devpars = {width = 2200}
+split_by = "Timepoint"
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot by Tissue']
+devpars = {width = 2200}
+split_by = "Tissue"
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot by Sample']
+devpars = {width = 2000, height = 3400}
+split_by = "Sample"
+ncol = 2
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot (CAFs)']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+devpars = {width = 1200}
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot (CAFs, by Timepoint separately)']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+devpars = {width = 1200}
+split_by = "Timepoint"
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot (CAFs, by Tissue separately)']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+devpars = {width = 1200}
+split_by = "Tissue"
+
+[MarkersFinder.envs]
+group_by = "Timepoint"
+ident_1 = "postCAR"
+ident_2 = "apheresis"
+each = "seurat_clusters"
+
+[MarkersFinder.envs.enrich_plots_defaults]
+devpars = { width = 1200 }

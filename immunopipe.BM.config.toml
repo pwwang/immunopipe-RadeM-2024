@@ -1,0 +1,1119 @@
+name = "ImmunopipeBM"
+
+[SampleInfo.in]
+infile = ["data/samples.BM.txt"]
+
+[SampleInfo.envs.stats.Sample_Group]
+plot_type = "bar"
+x = "Group"
+
+[SeuratPreparing.envs]
+# ncores = 4
+cell_qc = "nFeature_RNA > 200 & percent.mt < 10 & percent.ribo > 5"
+gene_qc = { min_cells = 0, excludes = ["^TR(A|B|D|G)V$", "^IG.V$"] }
+# reuse the output from the unsupervised pipeline
+cache = "./cache"
+doublet_detector = "scDblFinder"
+use_sct = false
+contam_correction = "decontX"
+
+[SeuratPreparing.envs.IntegrateLayers]
+method = "harmony"
+
+# [SeuratClustering.envs.FindClusters]
+# resolution = ["0.1:0.8", "0.2"]
+
+[ModuleScoreCalculator.envs.modules.ModuleScore]
+features = ["FCGR3A", "CD14", "SIRPA", "CD68", "SLAMF7", "FAP", "TNFRSF17", "CD47", "SDC1"]
+
+# [CellTypeAnnotation.envs]
+# # tool = "sctype"
+# # sctype_db = "~/reference/ScTypeDB_BoneMarrow.xlsx"
+# # sctype_tissue = "Bone Marrow"
+# tool = "direct"
+# cell_types = [
+#     # 1. "pct1<pct2_1", # "Unknown.2", # "pct1<pct2_1", # "Cluster1", # "Malignant Plasma cells-1",
+#     "pct1<pct2_1",
+#     # 2. "pct1<pct2_2", # "Unknown.3", # "pct1<pct2_2", # "Cluster2", # "CAF-1",
+#     "pct1<pct2_2",
+#     # 3. "Mesenchymal cell", # "CAF_1", # "Cluster3", # "Malignant Plasma cells-2",
+#     "myCAF",
+#     # 4. "Mesenchymal cell.1", # "CAF_2", # "Cluster4", # "CAF-2",
+#     "iCAF_1",
+#     # 5. "Stromal cell.1", # "CAF_3", # "Cluster5", # "TAM-1",
+#     "iCAF_2",
+#     # 6. "B cell", # "CAF_4", # "Cluster6", # "CAF-3",
+#     "Angiogenic/hypoxia-adapted CAF",
+#     # 7. "Unidentified", # "Progenitor cell", # "Unidentified", # "Cluster7", # "CAF-4",
+#     "iCAF_1",
+#     # 8. "Myeloid cell", # "M2-like macrophage", # "Cluster8", # "TAM-2",
+#     "M2-like macrophage",
+#     # 9. "Malignant plasma cells-1", # "Unknown.1", # "Malignant_1", # "Cluster9", # "CAF-5",
+#     "Malignant plasma cells-1",
+#     # 10. "Stromal cell", # "Malignant_2", # "Cluster10", # "CAF-6",
+#     "Malignant plasma cells-2",
+#     # 11. "Myeloid cell.1", # "Classical monocyte", # "Cluster11", # "CAF-7",
+#     "Classical monocyte",
+#     # 12. "Monocyte macrophage", # "Dendritic cell", # "Monocyte/macrophage", # "Cluster12", # "TAM-3",
+#     "Monocyte macrophage",
+#     # 13. "Malignant plasma cells-3", # "Unknown", # "Malignant_3", # "Cluster13", # "TAM-4",
+#     "Malignant plasma cells-3",
+#     # 14. "T cell", # "CD8 T cell" # "Cluster14", # "T cell",
+#     "CD8 T cell",
+# ]
+# merge = true
+
+# Reference mapping with Seurat::MapQuery (replaces the deprecated SeuratMap2Ref
+# process). Three cases reproduce the three label columns the downstream
+# SeuratClusterStats sections use -- `celltype`, `predicted.celltype_l2` and
+# `predicted.celltype_l3`; `add_prefix = false` keeps those names unprefixed.
+# The reference is a plain-RNA Harmony object: pca anchors, `umap` is the only
+# reduction carrying a UMAP model to project onto, LogNormalize normalization.
+[CellTypeAnnotation.envs]
+add_prefix = false
+cache = "./cache"
+
+  [CellTypeAnnotation.envs.cases.celltype]
+  tool = "mapquery"
+  anno_col = "celltype"
+  set_ident = true
+
+    [CellTypeAnnotation.envs.cases.celltype.mapquery]
+    db = "data/seurat_harmony_pub.rds"
+    use = "celltype"
+    refnorm = "LogNormalize"
+    ident_name = "celltype"
+
+      [CellTypeAnnotation.envs.cases.celltype.mapquery.find_transfer_anchors]
+      "reference.reduction" = "pca"
+      dims = 30
+      "normalization.method" = "LogNormalize"
+
+      [CellTypeAnnotation.envs.cases.celltype.mapquery.map_query]
+      "reference.reduction" = "pca"
+      "reduction.model" = "umap"
+
+  [CellTypeAnnotation.envs.cases.celltype_l2]
+  tool = "mapquery"
+  anno_col = "predicted.celltype_l2"
+  set_ident = false
+
+    [CellTypeAnnotation.envs.cases.celltype_l2.mapquery]
+    db = "data/seurat_harmony_pub.rds"
+    use = "celltype_short_2"
+    refnorm = "LogNormalize"
+    ident_name = "predicted.celltype_l2"
+
+      [CellTypeAnnotation.envs.cases.celltype_l2.mapquery.find_transfer_anchors]
+      "reference.reduction" = "pca"
+      dims = 30
+      "normalization.method" = "LogNormalize"
+
+      [CellTypeAnnotation.envs.cases.celltype_l2.mapquery.map_query]
+      "reference.reduction" = "pca"
+      "reduction.model" = "umap"
+
+  [CellTypeAnnotation.envs.cases.celltype_l3]
+  tool = "mapquery"
+  anno_col = "predicted.celltype_l3"
+  set_ident = false
+
+    [CellTypeAnnotation.envs.cases.celltype_l3.mapquery]
+    db = "data/seurat_harmony_pub.rds"
+    use = "celltype_short_3"
+    refnorm = "LogNormalize"
+    ident_name = "predicted.celltype_l3"
+
+      [CellTypeAnnotation.envs.cases.celltype_l3.mapquery.find_transfer_anchors]
+      "reference.reduction" = "pca"
+      dims = 30
+      "normalization.method" = "LogNormalize"
+
+      [CellTypeAnnotation.envs.cases.celltype_l3.mapquery.map_query]
+      "reference.reduction" = "pca"
+      "reduction.model" = "umap"
+
+[SeuratClusterStats.plugin_opts]
+report_paging = 8
+
+[SeuratClusterStats.envs]
+cache = "./cache"
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster (bar)']
+x_text_angle = 90
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster (pie)']
+plot_type = "pie"
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster by Sample']
+x_text_angle = 90
+group_by = "Sample"
+save_data = true
+
+[SeuratClusterStats.envs.stats.'Number of cells in each cluster by Group']
+group_by = "Group"
+x_text_angle = 90
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Group']
+group_by = "Group"
+save_data = true
+x_text_angle = 90
+frac = "group"
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Group (stacked)']
+group_by = "Group"
+save_data = true
+x_text_angle = 90
+position = "stack"
+frac = "group"
+swap = true
+flip = true
+devpars = {width = 900, height = 600}
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Group (celltype)']
+ident = "celltype"
+group_by = ["Sample", "Group"]
+x_text_angle = 90
+frac = "group"
+plot_type = "box"
+comparisons = true
+sig_label = "p.format"
+add_point = true
+aspect_ratio = 0.2
+more_formats = ["pdf"]
+devpars = {width = 1500, height = 500}
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Group (celltype_l2)']
+ident = "predicted.celltype_l2"
+group_by = ["Sample", "Group"]
+x_text_angle = 90
+frac = "group"
+plot_type = "box"
+comparisons = true
+sig_label = "p.format"
+add_point = true
+aspect_ratio = 0.2
+more_formats = ["pdf"]
+devpars = {width = 1080, height = 500}
+
+[SeuratClusterStats.envs.stats.'Fraction of cells in each cluster by Group (celltype_l3)']
+ident = "predicted.celltype_l3"
+group_by = ["Sample", "Group"]
+x_text_angle = 90
+frac = "group"
+plot_type = "box"
+comparisons = true
+sig_label = "p.format"
+add_point = true
+aspect_ratio = 0.2
+more_formats = ["pdf"]
+devpars = {width = 720, height = 500}
+
+# [SeuratClusterStats.envs.stats.'Number of cells in CAFs']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+# plot_type = "bar"
+# # facet_by = "Group"
+# x_text_angle = 90
+# devpars = {width = 1200, height = 1500, res = 192}
+
+# [SeuratClusterStats.envs.stats.'Number of cells in CAFs by Group']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+# plot_type = "bar"
+# facet_by = "Group"
+# x_text_angle = 90
+# devpars = {width = 1600, height = 1500, res = 192}
+
+[SeuratClusterStats.envs.ngenes]
+'Number of genes expressed in each cluster' = {devpars = {width = 1200}}
+
+[SeuratClusterStats.envs.features."Myeloid Cell Markers"]
+features = [
+    "FCGR3A",  # CD16a
+    "CD14", "SIRPA", "CD68", "SLAMF7"]
+plot_type = "dim"
+
+[SeuratClusterStats.envs.features."Myeloid Cell Markers (by Group)"]
+features = [
+    "FCGR3A",  # CD16a
+    "CD14", "SIRPA", "CD68", "SLAMF7"]
+plot_type = "dim"
+split_by = "Group"
+
+[SeuratClusterStats.envs.features."CAF Markers"]
+features = ["FAP", "SLAMF7"]
+plot_type = "dim"
+
+[SeuratClusterStats.envs.features."CAF Markers (by Group)"]
+features = ["FAP", "SLAMF7"]
+plot_type = "dim"
+split_by = "Group"
+
+[SeuratClusterStats.envs.features."Plasma Cell Markers"]
+features = [
+    "TNFRSF17",  # BCMA
+    "SLAMF7",
+    "CD47",
+    "SDC1"  # CD138
+]
+plot_type = "dim"
+
+[SeuratClusterStats.envs.features."Plasma Cell Markers (by Group)"]
+features = [
+    "TNFRSF17",  # BCMA
+    "SLAMF7",
+    "CD47",
+    "SDC1"  # CD138
+]
+plot_type = "dim"
+split_by = "Group"
+
+[SeuratClusterStats.envs.features."ModuleScore by Group"]
+features = ["ModuleScore"]
+plot_type = "dim"
+split_by = "Group"
+
+[SeuratClusterStats.envs.features."ModuleScore by Group (violin)"]
+features = ["ModuleScore"]
+plot_type = "violin"
+group_by = "Group"
+add_box = true
+comparisons = true
+y_max = 1.3
+x_text_angle = 90
+aspect-ratio = 0.2
+devpars = {width = 2400, height = 960}
+
+[SeuratClusterStats.envs.features."ModuleScore by Sample"]
+features = ["ModuleScore"]
+plot_type = "dim"
+split_by = "Sample"
+ncol = 2
+
+[SeuratClusterStats.envs.features."Exhaustion/Activation Markers (by Group)"]
+features = ["IL2RA", "CD69", "TIGIT", "CTLA4", "PDCD1", "LAG3", "HAVCR2", "IFNG", "IL4R", "IL4", "IL2", "IL15", "IL12A"]
+plot_type = "violin"
+add_box = true
+group_by = "Group"
+comparisons = true
+y_nbreaks = 4
+y_max = 4.6
+y_brackets = 4.1
+hide_ns = true
+x_text_angle = 90
+aspect-ratio = 0.1
+devpars = {res = 150, width = 8400}
+
+[SeuratClusterStats.envs.features."FAP and S100A4 expression (dimplots)"]
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+plot_type = "dim"
+features = ["FAP", "S100A4"]
+split_by = "predicted.celltype_l3"
+
+[SeuratClusterStats.envs.features."FAP and S100A4 expression (boxplots, by Group)"]
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+plot_type = "box"
+group_by = "Group"
+keep_empty = true
+features = ["FAP", "S100A4"]
+split_by = "predicted.celltype_l3"
+devpars = {height = 1200}
+
+[SeuratClusterStats.envs.features."SIRPA and FCGR3A (CD16A) expression (dimplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "dim"
+features = ["SIRPA", "FCGR3A"]
+split_by = "predicted.celltype_l3"
+
+[SeuratClusterStats.envs.features."SIRPA and FCGR3A (CD16A) expression (boxplots, by Group)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Group"
+features = ["SIRPA", "FCGR3A"]
+split_by = "predicted.celltype_l3"
+x_text_angle = 90
+comparisons = true
+y_max = 4.5
+y_brackets = 3.8
+# sig_label = "p = {p}"
+hide_ns = true
+y_nbreaks = 6
+sig_labelsize = 3
+keep_empty = true
+ncol = 3
+aspect-ratio = 0.2
+more_formats = ["pdf"]
+devpars = {height = 4000, width = 9600, res = 150}
+theme_args = {base_size = 16}
+
+[SeuratClusterStats.envs.features."CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["CD47", "SIRPA", "FCGR3A", "FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 3600, width = 5500, res = 100}
+# comparisons = true
+hide_ns = true
+step_increase = 1
+# [SeuratClusterStats.envs.features."CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots)".comparisons]
+# 0 = ["myCAF", "iCAF_1"]
+# 1 = ["myCAF", "iCAF_2"]
+# 2 = ["myCAF", "Angiogenic/hypoxia-adapted CAF"]
+# 3 = ["myCAF", "M2-like macrophage"]
+# 4 = ["myCAF", "Malignant plasma cells-2"]
+# 5 = ["myCAF", "Classical monocyte"]
+# 6 = ["myCAF", "CD8 T cell"]
+# 7 = ["iCAF_1", "iCAF_2"]
+# 8 = ["iCAF_1", "Angiogenic/hypoxia-adapted CAF"]
+# 9 = ["iCAF_1", "M2-like macrophage"]
+# 10 = ["iCAF_1", "Malignant plasma cells-2"]
+# 11 = ["iCAF_1", "Classical monocyte"]
+# 12 = ["iCAF_1", "CD8 T cell"]
+# 13 = ["iCAF_2", "Angiogenic/hypoxia-adapted CAF"]
+# 14 = ["iCAF_2", "M2-like macrophage"]
+# 15 = ["iCAF_2", "Malignant plasma cells-2"]
+# 16 = ["iCAF_2", "Classical monocyte"]
+# 17 = ["iCAF_2", "CD8 T cell"]
+# 18 = ["Angiogenic/hypoxia-adapted CAF", "M2-like macrophage"]
+# 19 = ["Angiogenic/hypoxia-adapted CAF", "Malignant plasma cells-2"]
+# 20 = ["Angiogenic/hypoxia-adapted CAF", "Classical monocyte"]
+# 21 = ["Angiogenic/hypoxia-adapted CAF", "CD8 T cell"]
+# 22 = ["M2-like macrophage", "Malignant plasma cells-2"]
+# 23 = ["M2-like macrophage", "Classical monocyte"]
+# 24 = ["M2-like macrophage", "CD8 T cell"]
+# 25 = ["Malignant plasma cells-2", "Classical monocyte"]
+# 26 = ["Malignant plasma cells-2", "CD8 T cell"]
+# 27 = ["Classical monocyte", "CD8 T cell"]
+
+[SeuratClusterStats.envs.features."CD47 expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["CD47"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."SIRPA expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["SIRPA"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."FCGR3A expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["FCGR3A"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."FAP expression (boxplots)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+# group_by = "Group"
+features = ["FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "SLAMF7", "B2M", "LILRB1", "LILRB2",
+    "HLA-A", "HLA-B", "HLA-C",
+    "HLA-DPA1", "HLA-DPB1", "HLA-DQA1", "HLA-DQB1", "HLA-DRA", "HLA-DRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 7200, width = 11000, res = 100}
+
+[SeuratClusterStats.envs.features."SLAMF7 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "SLAMF7",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."B2M expression (boxplots)"]
+plot_type = "box"
+features = [
+    "B2M",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "LILRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB2 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "LILRB2",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-A expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-A",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-B expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-B",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-C expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-C",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPA1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DPA1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DPB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQA1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DQA1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DQB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRA expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DRA",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRB1 expression (boxplots)"]
+plot_type = "box"
+features = [
+    "HLA-DRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+ncol = 4
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1800, width = 2700, res = 100}
+
+[SeuratClusterStats.envs.features."CD47, SIRPA, FCGR3A (CD16A) and FAP expression (boxplots, by Group)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Group"
+features = ["CD47", "SIRPA", "FCGR3A", "FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 24}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 3000, width = 5500, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."CD47 expression (boxplots, by Group)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Group"
+features = ["CD47"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."SIRPA expression (boxplots, by Group)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Group"
+features = ["SIRPA"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."FCGR3A expression (boxplots, by Group)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Group"
+features = ["FCGR3A"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."FAP expression (boxplots, by Group)"]
+# subset = 'seurat_clusters %in% c("M2-like macrophage", "Classical monocyte", "Monocyte macrophage")'
+plot_type = "box"
+group_by = "Group"
+features = ["FAP"]
+# split_by = "seurat_clusters"
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+# sig_label = "p = {p}"
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2700, res = 100}
+# comparisons = true
+
+[SeuratClusterStats.envs.features."SLAMF7, MHCI, MHCII, B2M, LILRB1 and LILRB2 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = [
+    "SLAMF7", "B2M", "LILRB1", "LILRB2",
+    "HLA-A", "HLA-B", "HLA-C",
+    "HLA-DPA1", "HLA-DPB1", "HLA-DQA1", "HLA-DQB1", "HLA-DRA", "HLA-DRB1",
+]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 6000, width = 10200, res = 100}
+ncol = 4
+
+[SeuratClusterStats.envs.features."SLAMF7 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["SLAMF7"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."B2M expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["B2M"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB1 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["LILRB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."LILRB2 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["LILRB2"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-A expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-A"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-B expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-B"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-C expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-C"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPA1 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-DPA1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DPB1 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-DPB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQA1 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-DQA1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DQB1 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-DQB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRA expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-DRA"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+[SeuratClusterStats.envs.features."HLA-DRB1 expression (boxplots, by Group)"]
+plot_type = "box"
+group_by = "Group"
+features = ["HLA-DRB1"]
+stack = true
+add_bg = true
+x_text_angle = 90
+y_nbreaks = 6
+split_by = true
+theme_args = {base_size = 32}
+aspect-ratio = 0.5
+devpars = {height = 1500, width = 2500, res = 100}
+
+
+[SeuratClusterStats.envs.features."Hypersialylation Markers".features]
+"Sialic acid biosynthesis" = [
+    "GNE",
+    "CMAS",
+    "NANS",
+    "NANP",
+    "SLC35A1",
+]
+Neuraminidases = [
+    "NEU1",
+    # "NEU2",
+    "NEU3",
+    "NEU4",
+]
+Sialyltransferases = [
+    "ST3GAL1",
+    "ST3GAL2",
+    "ST3GAL3",
+    "ST3GAL4",
+    "ST3GAL5",
+    "ST3GAL6",
+    "ST6GAL1",
+    "ST6GAL2",
+    "ST6GALNAC1",
+    "ST6GALNAC2",
+    "ST6GALNAC3",
+    "ST6GALNAC4",
+    "ST6GALNAC5",
+    "ST6GALNAC6",
+    "ST8SIA1",
+    # "ST8SIA2",
+    # "ST8SIA3",
+    "ST8SIA4",
+    "ST8SIA5",
+    "ST8SIA6",
+]
+"Ganglioside synthesis" = [
+    "UGCG",
+    "B3GALT4",
+    "B4GALNT1",
+    "B4GALT5",
+    "B4GALT6",
+]
+"Possible Siglec ligands" = [
+    "CD44",
+    "MUC1",
+]
+"Drivers of sialyltransferase" = [
+    "PTGS2",
+    "TGFB1",
+    "IL6",
+]
+[SeuratClusterStats.envs.features."Hypersialylation Markers"]
+plot_type = "heatmap"
+devpars = {height = 1500}
+
+[SeuratClusterStats.envs.features."New Markers (boxplots)"]
+features = [
+    "ACTA2", "THY1", "ENG", "MCAM", "CD34", "NT5E", "MME", "CA9", "PDGFRB", #"PDPN"
+]
+plot_type = "box"
+group_by = "Group"
+split_by = true
+save_data = true
+devpars = {height = 1200}
+
+[SeuratClusterStats.envs.features."New Markers (boxplots, separately)"]
+features = [
+    "ACTA2", "THY1", "ENG", "MCAM", "CD34", "NT5E", "MME", "CA9", "PDGFRB", #"PDPN"
+]
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+plot_type = "box"
+group_by = "Group"
+split_by = "predicted.celltype_l3"
+x_text_angle = 90
+keep_empty = true
+
+[SeuratClusterStats.envs.features."New Markers (boxplots, no grouping)"]
+features = [
+    "ACTA2", "THY1", "ENG", "MCAM", "CD34", "NT5E", "MME", "CA9", "PDGFRB", #"PDPN"
+]
+plot_type = "box"
+split_by = true
+save_data = true
+x_text_angle = 90
+aspect-ratio = 0.2
+devpars = {width = 2800, height = 1400}
+
+[SeuratClusterStats.envs.features."SIRPA (dimplots, by Group)"]
+features = ["SIRPA"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.features."CD14 (dimplots, by Group)"]
+features = ["CD14"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.features."CD16a(FCGR3A) (dimplots, by Group)"]
+features = ["FCGR3A"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.features."CD16b(FCGR3B) (dimplots, by Group)"]
+features = ["FCGR3B"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.features."CD163 (dimplots, by Group)"]
+features = ["CD163"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.features."CD206(MRC1) (dimplots, by Group)"]
+features = ["MRC1"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.features."CD80 (dimplots, by Group)"]
+features = ["CD80"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.features."CD86 (dimplots, by Group)"]
+features = ["CD86"]
+ident = "predicted.celltype_l3"
+plot_type = "dim"
+split_by = "Group"
+more_formats = ["pdf"]
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot']
+devpars = {width = 1400}
+label = true
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot by Group']
+devpars = {width = 2200}
+split_by = "Group"
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot by Sample']
+devpars = {width = 2000, height = 3400}
+split_by = "Sample"
+ncol = 2
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot (CAFs)']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+devpars = {width = 1200}
+
+[SeuratClusterStats.envs.dimplots.'Dimensional reduction plot (CAFs, by Group separately)']
+# subset = 'seurat_clusters %in% c("myCAF", "iCAF_1", "iCAF_2", "Angiogenic/hypoxia-adapted CAF")'
+devpars = {width = 1200}
+split_by = "Group"
+
+[MarkersFinder.envs]
+group_by = "Group"
+ident_1 = "Responder"
+ident_2 = "Non-responder"
+each = "predicted.celltype_l3"
+error = false
+
+[MarkersFinder.envs.enrich_plots_defaults]
+devpars = { width = 1200 }
